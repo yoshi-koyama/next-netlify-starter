@@ -1,11 +1,12 @@
 import Head from 'next/head'
 
-import { fetchEntries, fetchHero } from '../util/contentfulPosts'
+import { fetchHero, fetchCompanyInfo } from '../util/contentfulPosts'
 
 import Footer from '@components/Footer'
 import Hero from '@components/Hero'
+import CompanyInfo from '@components/CompanyInfo'
 
-export default function Home({ posts, hero }) {
+export default function Home({ hero, companyInfo }) {
   return (
     <>
       <Head>
@@ -17,11 +18,7 @@ export default function Home({ posts, hero }) {
       </div>
       <div className="container">
         <main>
-          {/* <div className="posts">
-            {posts.map((p) => {
-              return <Post key={p.date} date={p.date} image={p.image.fields} title={p.title} />
-            })}
-          </div> */}
+          <CompanyInfo key={companyInfo.name} name={companyInfo.name} location={companyInfo.location} phone={companyInfo.phone}/>
         </main>
         <Footer />
         <style jsx>{`
@@ -66,20 +63,18 @@ export default function Home({ posts, hero }) {
 }
 
 export async function getStaticProps() {
-  const postRes = await fetchEntries()
-  const posts = await postRes.map((p) => {
-    return p.fields
-  })
-  console.log("posts", posts)
-
   const heroRes = await fetchHero()
   const hero = await heroRes.fields
   console.log("hero", hero)
 
+  const companyInfoRes = await fetchCompanyInfo()
+  const companyInfo = await companyInfoRes.fields
+  console.log("companyInfo", companyInfo)
+
   return {
     props: {
-      posts,
-      hero
+      hero,
+      companyInfo
     },
   }
 }
