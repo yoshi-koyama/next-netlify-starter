@@ -18,4 +18,10 @@ export async function fetchHero() {
   console.log("Error getting Hero")
 }
 
+export async function fetchCompanyInfo() {
+  const companyInfo = await client.getEntry("5Dquxzmvugd1X8XDmwaTE1")
+  if (companyInfo) return companyInfo
+  console.log("Error getting companyInfo")
+}
+
 export default { fetchEntries }
