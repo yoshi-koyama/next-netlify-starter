@@ -24,4 +24,10 @@ export async function fetchCompanyInfo() {
   console.log("Error getting companyInfo")
 }
 
+export async function fetchTodos() {
+  const todos = await client.getEntries({content_type: "todo"})
+  if (todos.items) return todos.items
+  console.log("Error getting Entries for todos.")
+}
+
 export default { fetchEntries }
