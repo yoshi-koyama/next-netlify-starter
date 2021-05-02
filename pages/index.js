@@ -1,10 +1,11 @@
 import Head from 'next/head'
-
-import { fetchHero, fetchCompanyInfo } from '../util/contentfulPosts'
-
 import Footer from '@components/Footer'
+
+import { fetchHero, fetchCompanyInfo, fetchTodos } from '../util/contentfulPosts'
+
 import Hero from '@components/Hero'
 import CompanyInfo from '@components/CompanyInfo'
+
 
 export default function Home({ hero, companyInfo }) {
   return (
@@ -65,16 +66,14 @@ export default function Home({ hero, companyInfo }) {
 export async function getStaticProps() {
   const heroRes = await fetchHero()
   const hero = await heroRes.fields
-  console.log("hero", hero)
 
   const companyInfoRes = await fetchCompanyInfo()
   const companyInfo = await companyInfoRes.fields
-  console.log("companyInfo", companyInfo)
 
   return {
     props: {
       hero,
-      companyInfo
+      companyInfo,
     },
   }
 }
