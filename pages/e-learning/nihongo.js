@@ -1,6 +1,9 @@
+import Link from 'next/link'
 import { useState } from 'react'
 import { fetchTodos } from '../../util/contentfulPosts'
 import { createTodo } from '../../util/contentfulCreateClient'
+import Counter from '../../components/Counter'
+import NameForm from '../../components/NameForm'
 
 export default function Nihongo({ initialTodos }) {
   // 作成したtodoを入れておくためのstate
@@ -46,6 +49,20 @@ export default function Nihongo({ initialTodos }) {
           return <li key={index}>{todo}</li>;
         })}
       </ul>
+      <div className="playground">
+        <div className="counter">
+          <Counter />
+        </div>
+        <div className="name-form">
+          <NameForm />
+        </div>
+      </div>
+
+      <div className="backToHome">
+        <Link href="/">
+          <a>← Back to home</a>
+        </Link>
+      </div>
       <style>{`
         h1 {
           text-align: center;
@@ -54,9 +71,19 @@ export default function Nihongo({ initialTodos }) {
           display: flex;
           justify-content: center;
         }
+        .playground {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        
         ul {
           width: 200px;
           margin: 10px auto;
+        }
+        .backToHome {
+          text-align: center;
         }
       `}</style>
     </>
