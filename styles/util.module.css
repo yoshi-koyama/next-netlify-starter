@@ -1,0 +1,15 @@
+.sectionTitle {
+  font-weight: bold;
+  text-align: center;
+}
+
+@media screen and (min-width: 601px) {
+  .sectionTitle {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sectionTitle {
+    font-size: 25px;
+  }
+}

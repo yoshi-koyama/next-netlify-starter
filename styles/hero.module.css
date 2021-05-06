@@ -22,7 +22,6 @@
 .title,
 .submessage {
   color: #fff;
-  /* position: relative; */
   z-index: 2;
 }
 
@@ -30,10 +29,16 @@
   .heroimage {
     height: 500px;
   }
+  .title {
+    font-size: 50px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .heroimage {
     height: 500px;
+  }
+  .title {
+    font-size: 36px;
   }
 }
