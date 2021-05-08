@@ -16,8 +16,18 @@ export default function Home({ hero, companyInfo }) {
   return (
     <>
       <Head>
-        <title>Next + Contentful Starter</title>
+        <title>Rey Tech</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Brush up what I learn from Paiza Skill Check Test"
+        />
+        <meta
+          property="og:image"
+          content="https://images.ctfassets.net/17bs4cqi7kdy/5MqjfavYZwupNSKacZzO6e/a611475b9f2ce2baf710194b249c8c93/ogp.png"
+        />
+        <meta name="og:title" content="Rey Tech" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className="hero">
         <Hero  key={hero.title} title={hero.title} text={hero.text} image={hero.heroImage.fields}/>
