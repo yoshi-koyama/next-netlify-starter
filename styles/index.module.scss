@@ -1,0 +1,11 @@
+@use './common/tools/' as t;
+
+.inner {
+  @include t.width-limiter;
+  @include t.mq($from: sp) {
+    margin-bottom: 80px;
+  }
+  @include t.mq($until: sp) {
+    margin-bottom: 50px;
+  }
+}

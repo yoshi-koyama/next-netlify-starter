@@ -1,5 +1,5 @@
-import aboutStyles from '../styles/about.module.css'
-import utilStyles from '../styles/util.module.css'
+import aboutStyles from '@styles/about.module.scss'
+import utilStyles from '@styles/util.module.scss'
 
 export default function About() {
 

@@ -1,0 +1,19 @@
+@use './media.scss' as media;
+
+$pc-gutter: 40px;
+$sp-gutter: 20px;
+
+@mixin width-limiter($pc-max-width: 600px) {
+  width: 100%;
+  @include media.mq($from: sp) {
+    padding-left: $pc-gutter;
+    padding-right: $pc-gutter;
+    max-width: $pc-max-width + $pc-gutter * 2;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @include media.mq($until: sp) {
+    padding-left: $sp-gutter;
+    padding-right: $sp-gutter;
+  }
+}

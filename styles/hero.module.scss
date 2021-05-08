@@ -1,0 +1,45 @@
+@use './common/tools/' as t;
+
+.hero {
+  background-image: url(https://images.ctfassets.net/17bs4cqi7kdy/17dxJLiXS3qiRxsJlKfo2l/182970741ea0e4336299b781a71cf3f1/lauren-mancke-aOC7TSLb1o8-unsplash.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-right: 20px;
+  padding-left: 20px;
+  @include t.mq($from: sp) {
+    height: 500px;
+    margin-bottom: 80px;
+  }
+  @include t.mq($until: sp) {
+    height: 500px;
+    margin-bottom: 40px;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &__title {
+    color: #fff;
+    z-index: 2;
+    padding: 15px 0;
+    font-weight: bold;
+    @include t.mq($from: sp) {
+      font-size: 50px;
+    }
+    @include t.mq($until: sp) {
+      font-size: 36px;
+    }
+  }
+  &__submessage {
+    color: #fff;
+    z-index: 2;
+  }
+}
