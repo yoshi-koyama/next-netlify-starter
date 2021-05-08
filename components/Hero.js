@@ -1,11 +1,11 @@
-import heroStyles from '../styles/hero.module.css'
+import heroStyles from '@styles/hero.module.scss'
 
 export default function Hero({ title, text, image }) {
 
   let file = image
 
-  return <div className={heroStyles.heroimage}>
-      <h2 className={heroStyles.title}>{title}</h2>
-      <p className={heroStyles.submessage}>{text}</p>
+  return <div className={heroStyles.hero}>
+      <h1 className={heroStyles.hero__title}>{title}</h1>
+      <p className={heroStyles.hero__submessage}>{text}</p>
     </div>
 }

@@ -1,0 +1,16 @@
+.companyInfo {
+  &__row {
+    display: flex;
+  }
+  &__title {
+    padding: 10px 10px 10px 0;
+    width: 30%;
+  }
+  &__description {
+    padding: 10px;
+    width: 70%;
+  }
+  &___descriptionAdjuster {
+    margin-bottom: 10px;
+  }
+}

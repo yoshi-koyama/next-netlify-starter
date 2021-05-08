@@ -1,0 +1,32 @@
+@use './common/tools/' as t;
+
+.contact {
+  &__message {
+    @include t.mq($from: sp) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    @include t.mq($until: sp) {
+      margin-bottom: 10px;
+    }
+  }
+  &__phonenumber {
+    @include t.mq($from: sp) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    @include t.mq($until: sp) {
+      margin-bottom: 10px;
+    }
+  }
+  &__email {
+    @include t.mq($from: sp) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    @include t.mq($until: sp) {
+      margin-bottom: 10px;
+    }
+  }
+
+}

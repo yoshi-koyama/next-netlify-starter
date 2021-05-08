@@ -6,8 +6,10 @@ import { fetchHero, fetchCompanyInfo, fetchTodos } from '../util/contentfulPosts
 import Hero from '@components/Hero'
 import CompanyInfo from '@components/CompanyInfo'
 import About from '@components/About'
+import Recruit from '@components/Recruit'
+import Contact from '@components/Contact'
 
-import indexStyles from '../styles/index.module.css'
+import indexStyles from '../styles/index.module.scss'
 
 
 export default function Home({ hero, companyInfo }) {
@@ -26,6 +28,12 @@ export default function Home({ hero, companyInfo }) {
         </div>
         <div className={indexStyles.inner}>
           <About />
+        </div>
+        <div className={indexStyles.inner}>
+          <Recruit />
+        </div>
+        <div className={indexStyles.inner}>
+          <Contact />
         </div>
       </main>
       <Footer />
